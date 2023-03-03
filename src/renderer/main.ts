@@ -1,7 +1,24 @@
 import { createApp } from 'vue'
-import './style.css';
 import App from './App.vue'
+import { setupDirectives } from './directives'
+import { setupI18n } from './locales'
+import { setupAssets } from './plugins'
+import { setupStore } from './store'
+import { setupRouter } from './router'
 
-const app = createApp(App);
+async function bootstrap() {
+  const app = createApp(App)
+  setupAssets()
 
-app.mount('#app');
+  setupStore(app)
+
+  setupDirectives(app)
+
+  setupI18n(app)
+
+  await setupRouter(app)
+
+  app.mount('#app')
+}
+
+bootstrap()
