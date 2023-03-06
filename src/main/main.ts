@@ -1,8 +1,13 @@
 import {app, BrowserWindow, ipcMain, session} from 'electron';
 import {join} from 'path';
 
+const appName = app.getPath("exe");
+const expressAppUrl = "http://127.0.0.1:3000";
+let mainWindow: BrowserWindow | null;
+let expressPath = "./dist/src/express-app.js";
+
 function createWindow () {
-  const mainWindow = new BrowserWindow({
+   mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,
     webPreferences: {

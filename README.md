@@ -73,3 +73,9 @@ import {readFileSync} from 'fs';
 const path = join(app.getAppPath(), 'static', 'myFile.txt');
 const buffer = readFileSync(path);
 ```
+
+
+// 前端项目的修改
+去掉 VITE_GLOB_API_URL=/api ,直接使用后端地址
+
+i18n

@@ -8,7 +8,9 @@
     "build": "node scripts/build.js && electron-builder",
     "build:win": "node scripts/build.js && electron-builder --win",
     "build:mac": "node scripts/build.js && electron-builder --mac",
-    "build:linux": "node scripts/build.js && electron-builder --linux"
+    "build:linux": "node scripts/build.js && electron-builder --linux",
+    "build:service": "tsup src/service/src/index.ts",
+    "build:renderer": "vite build"
   },
   "repository": "https://github.com/deluze/electron-vue-template",
   "author": {
@@ -42,10 +44,12 @@
     "postcss": "^8.4.21",
     "rimraf": "^4.1.3",
     "tailwindcss": "^3.2.7",
-    "vue-tsc": "^1.2.0"
+    "vue-tsc": "^1.2.0",
+    "@types/express": "^4.17.17",
+    "tsup": "^6.6.3",
+    "@intlify/unplugin-vue-i18n": "^0.8.2"
   },
   "dependencies": {
-    "@intlify/unplugin-vue-i18n": "^0.8.2",
     "@vueuse/core": "^9.13.0",
     "highlight.js": "^11.7.0",
     "marked": "^4.2.12",
@@ -53,6 +57,13 @@
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-i18n": "^9.2.2",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "chatgpt": "^5.0.4",
+    "dotenv": "^16.0.3",
+    "esno": "^0.16.3",
+    "express": "^4.18.2",
+    "isomorphic-fetch": "^3.0.0",
+    "node-fetch": "^3.3.0",
+    "socks-proxy-agent": "^7.0.0"
   }
 }
