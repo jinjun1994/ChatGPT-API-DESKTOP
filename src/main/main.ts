@@ -1,12 +1,31 @@
 import {app, BrowserWindow, ipcMain, session} from 'electron';
 import {join} from 'path';
+import { spawn } from "child_process";
+import { Readable } from "stream";
 
 const appName = app.getPath("exe");
-const expressAppUrl = "http://127.0.0.1:3000";
+const name = "chatgpt-desktop";
+const expressAppUrl = "http://127.0.0.1:30002";
 let mainWindow: BrowserWindow | null;
-let expressPath = "./dist/src/express-app.js";
+let expressPath = "./build/service/index.js";
 
+
+if (appName.endsWith(`${name}.exe`)) {
+	expressPath = join("./resources/app.asar", expressPath);
+}
+function redirectOutput(x: Readable) {
+	x.on("data", function (data: any) {
+    console.log(data.toString());
+	});
+}
 function createWindow () {
+  const expressAppProcess = spawn(appName, [expressPath], {
+		env: {
+			ELECTRON_RUN_AS_NODE: "1",
+		},
+	});
+  redirectOutput(expressAppProcess.stdout);
+	redirectOutput(expressAppProcess.stderr);
    mainWindow = new BrowserWindow({
     width: 1920,
     height: 1080,

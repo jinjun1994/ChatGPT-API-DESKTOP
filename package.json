@@ -1,5 +1,5 @@
 {
-  "name": "electron-vue-template",
+  "name": "chatgpt-desktop",
   "version": "0.1.0",
   "description": "A minimal Electron + Vue application",
   "main": "build/main/main.js",
@@ -9,7 +9,7 @@
     "build:win": "node scripts/build.js && electron-builder --win",
     "build:mac": "node scripts/build.js && electron-builder --mac",
     "build:linux": "node scripts/build.js && electron-builder --linux",
-    "build:service": "tsup src/service/src/index.ts",
+    "build:service": "tsup",
     "build:renderer": "vite build"
   },
   "repository": "https://github.com/deluze/electron-vue-template",
@@ -55,9 +55,7 @@
     "marked": "^4.2.12",
     "naive-ui": "^2.34.3",
     "pinia": "^2.0.32",
-    "vue": "^3.2.47",
-    "vue-i18n": "^9.2.2",
-    "vue-router": "^4.1.6",
+
     "chatgpt": "^5.0.4",
     "dotenv": "^16.0.3",
     "esno": "^0.16.3",
