@@ -10,6 +10,12 @@
 中国用户，需要设置代理，否则无法访问 openAi 的api
 
 
+window用户：
+解压后，修改 .env 文件，
+填写 openAi 的key，
+以及代理的局域网地址和端口（仅中国用户需要），
+然后双击运行 chatgpt-desktop.exe 即可
 
-
+mac 用户：
+暂无 mac 电脑打包文件。
 
