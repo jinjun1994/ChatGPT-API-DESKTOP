@@ -11,6 +11,9 @@
 
 
 window用户：
+点击 https://github.com/jinjun1994/ChatGPT-API-DESTOP/releases
+
+下载 chatgpt-desktop-*.*.windows.zip
 解压后，修改 .env 文件，
 填写 openAi 的key，
 以及代理的局域网地址和端口（仅中国用户需要），
